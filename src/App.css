@@ -249,6 +249,26 @@ input[type="range"] {
   opacity: 1;
 }
 
+.regeneratePasswordIcon {
+  transition: transform 0.5s ease-in-out;
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+.regeneratePasswordIcon:hover {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.letter {
+  color: rgb(51, 51, 51);
+}
+.number {
+  color: rgb(5, 114, 236);
+}
+.symbol {
+  color: rgb(230, 74, 74);
+}
+
 /* Media queries */
 @media (min-width: 670px) {
   .row {

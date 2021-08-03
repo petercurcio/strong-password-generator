@@ -1,29 +1,111 @@
 import React, { useState } from "react";
 import Container from "./components/Container";
 import NewButton from "./components/NewButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import parser from "html-react-parser";
 
 import "./App.css";
 
 function App() {
   const [passwordLength, setPasswordLength] = useState(12);
   const [password, setPassword] = useState();
+  const [plainPasswd, setPlainPasswd] = useState("");
+  const [includeNumbers, setIncludeNumbers] = useState(true);
+  const [includeSymbols, setIncludeSymbols] = useState(true);
 
-  const passwordLengthChangeHandler = (e) => {
-    e.preventDefault();
-    setPasswordLength(e.target.value);
-    generatePassword(e.target.value);
-  };
+  // console.log(
+  //   "beginning values: |",
+  //   "includeNumbers:",
+  //   includeNumbers,
+  //   "includeSymbols:",
+  //   includeSymbols
+  // );
 
   const chars =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_";
 
   const generatePassword = (passwordLength) => {
+    let filteredChars = "";
+    let plainPasswd = "";
     let passwd = "";
+
+    // console.log(
+    //   "generatePassword: |",
+    //   "includeNumbers:",
+    //   includeNumbers,
+    //   "includeSymbols:",
+    //   includeSymbols
+    // );
+
+    if (includeNumbers && !includeSymbols) {
+      filteredChars = chars.match(/[^!@#$%^&*()_]+/)[0];
+      // console.log("chars:", chars);
+      // console.log(
+      //   "chars.match(/[^!@#$%^&*()_]*/)[0]",
+      //   chars.match(/[^!@#$%^&*()_]+/)[0]
+      // );
+      // console.log(
+      //   "includeNumbers && !includeSymbols",
+      //   "includeNumbers:",
+      //   includeNumbers,
+      //   "includeSymbols:",
+      //   includeSymbols
+      // );
+      // console.log("filteredChars:", filteredChars);
+    }
+    if (!includeNumbers && includeSymbols) {
+      filteredChars = chars.match(/[^\d]+/)[0];
+      // console.log(
+      //   "!includeNumbers && includeSymbols",
+      //   "includeNumbers:",
+      //   includeNumbers,
+      //   "includeSymbols:",
+      //   includeSymbols
+      // );
+      // console.log("filteredChars:", filteredChars);
+    }
+    if (!includeNumbers && !includeSymbols) {
+      filteredChars = chars.match(/[^\d!@#$%^&*()_]+/)[0];
+      // console.log(
+      //   "!includeNumbers && !includeSymbols",
+      //   "includeNumbers:",
+      //   includeNumbers,
+      //   "includeSymbols:",
+      //   includeSymbols
+      // );
+      // console.log("filteredChars:", filteredChars);
+    }
+    if (includeNumbers && includeSymbols) {
+      filteredChars = chars;
+      // console.log(
+      //   "includeNumbers && includeSymbols |",
+      //   "includeNumbers:",
+      //   includeNumbers,
+      //   "includeSymbols:",
+      //   includeSymbols
+      // );
+      // console.log("filteredChars:", filteredChars);
+    }
+
     for (let i = 0; i < passwordLength; i++) {
       // console.log("random number:", Math.floor(Math.random() * chars.length));
       // passwd += chars[Math.floor(Math.random() * chars.length)];
 
-      let entry = chars[Math.floor(Math.random() * chars.length)];
+      let entry =
+        filteredChars[Math.floor(Math.random() * filteredChars.length)];
+
+      plainPasswd += entry;
+
+      entry = entry.match(/\d/)
+        ? `<span class="number">${entry}</span>`
+        : entry.match(/[!@#$%^&*()_]/)
+        ? `<span class="symbol">${entry}</span>`
+        : entry.match(/[a-zA-Z]/)
+        ? `<span class="letter">${entry}</span>`
+        : entry;
+      // chars[Math.floor(Math.random() * chars.length)];
+
       // console.log(typeof entry, entry);
       // console.log(isNaN(entry), entry);
 
@@ -45,11 +127,35 @@ function App() {
     // console.log(newPasswd);
 
     //console.log(passwd);
-    setPassword(passwd);
+    setPlainPasswd(plainPasswd);
+
+    //document.querySelector("password-display").innerHTML = parser(passwd);
+    setPassword(parser(passwd));
+    //setPassword(passwd);
+  };
+
+  const passwordLengthChangeHandler = (e) => {
+    setPasswordLength(e.target.value);
+    generatePassword(e.target.value);
   };
 
   const newButtonPasswordHandler = () => {
-    navigator.clipboard.writeText(password);
+    // navigator.clipboard.writeText(password);
+    navigator.clipboard.writeText(plainPasswd);
+  };
+
+  const includeNumbersHandler = () => {
+    setIncludeNumbers(!includeNumbers);
+    generatePassword(passwordLength);
+  };
+
+  const includeSymbolsHandler = () => {
+    setIncludeSymbols(!includeSymbols);
+    generatePassword(passwordLength);
+  };
+
+  const reloadHandler = () => {
+    generatePassword(passwordLength);
   };
 
   return (
@@ -74,6 +180,23 @@ function App() {
             onChange={passwordLengthChangeHandler}
             value={passwordLength}
           />
+          <label htmlFor="checkbox-numbers">Numbers</label>
+          <input
+            type="checkbox"
+            name="checkbox-numbers"
+            onChange={includeNumbersHandler}
+            checked={includeNumbers}
+          />
+          <label htmlFor="checkbox-symbols">Symbols</label>
+          <input
+            type="checkbox"
+            name="checkbox-symbols"
+            onChange={includeSymbolsHandler}
+            checked={includeSymbols}
+          />
+        </div>
+        <div className="regeneratePasswordIcon">
+          <FontAwesomeIcon icon={faSyncAlt} onClick={reloadHandler} />
         </div>
         <NewButton
           onClick={newButtonPasswordHandler}
