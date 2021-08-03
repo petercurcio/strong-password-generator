@@ -1,0 +1,130 @@
+/* General button style (reset) */
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 1.25em 2em;
+  display: inline-block;
+  margin: 0.5em 2em;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1px; */
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Button 5 */
+.btn-5 {
+  /* background: #823aa0; */
+  background: #0572ec;
+  color: #fff;
+  height: auto;
+  min-width: 260px;
+  line-height: 1rem;
+  font-size: 16px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 100px;
+}
+
+.btn-5:active {
+  /* background: #9053a9; */
+  top: 2px;
+}
+
+.btn-5 span {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+/* .btn-5:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 2.5;
+  font-size: 180%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+} */
+
+/* .btn-5:active:before {
+  color: #703b87;
+} */
+
+/* Button 5b */
+/* .btn-5b:hover span {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+} */
+
+.bumpText {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+/* .btn-5b:before {
+  left: -100%;
+  top: 0;
+} */
+
+/* .btn-5b:hover:before {
+  left: 0;
+} */
+
+.btn-5b-before {
+  left: -100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-5b-active {
+  left: 0;
+  background-color: #27ae60;
+}
+
+.fa-icon-check {
+  position: relative;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
