@@ -103,7 +103,7 @@ function App() {
             onChange={passwordLengthChangeHandler}
             value={passwordLength}
           />
-          <div className="checkbox">
+          {/* <div className="checkbox">
             <input
               type="checkbox"
               name="checkbox-numbers"
@@ -120,6 +120,52 @@ function App() {
               checked={symbolsIsChecked}
             />
             <label htmlFor="checkbox-symbols">Symbols</label>
+          </div> */}
+          {/* <div className="checkbox">
+            <label className="checkbox-wrapper">
+              Numbers
+              <input
+                type="checkbox"
+                checked={numbersIsChecked}
+                onChange={numbersIsCheckedHandler}
+              />
+              <span className="custom-checkbox"></span>
+            </label>
+          </div>
+          <div className="checkbox">
+            <label className="checkbox-wrapper">
+              Check
+              <input
+                type="checkbox"
+                checked={symbolsIsChecked}
+                onChange={symbolsIsCheckedHandler}
+              />
+              <span className="custom-checkbox"></span>
+            </label>
+          </div> */}
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="checkbox-element-1"
+              checked={numbersIsChecked}
+              onChange={numbersIsCheckedHandler}
+            />
+            <label htmlFor="checkbox-element-1">
+              <span className="indicator"></span>
+              <span className="label-text">Numbers</span>
+            </label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="checkbox-element-2"
+              checked={symbolsIsChecked}
+              onChange={symbolsIsCheckedHandler}
+            />
+            <label htmlFor="checkbox-element-2">
+              <span className="indicator"></span>
+              <span className="label-text">Symbols</span>
+            </label>
           </div>
         </div>
         <div className="regeneratePasswordIcon">

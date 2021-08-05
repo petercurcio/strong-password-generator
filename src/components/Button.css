@@ -1,3 +1,8 @@
+:root {
+  --blue-bg-color: #0572ec;
+  --blue-hover-color: #0458b9;
+}
+
 /* General button style (reset) */
 .btn {
   border: none;
@@ -40,7 +45,7 @@
 /* Button 5 */
 .btn-5 {
   /* background: #823aa0; */
-  background: #0572ec;
+  background: var(--blue-bg-color);
   color: #fff;
   height: auto;
   min-width: 260px;
@@ -51,6 +56,10 @@
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 100px;
+}
+
+.btn-5:hover {
+  background: var(--blue-hover-color);
 }
 
 .btn-5:active {
