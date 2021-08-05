@@ -23,23 +23,18 @@ function App() {
     num = numbersIsChecked,
     sym = symbolsIsChecked
   ) => {
-    let filteredChars = "";
+    let filteredChars = chars;
     let plainPasswd = "";
     let passwd = "";
 
     if (!num && !sym) {
       filteredChars = chars.match(/[^\d!@#$%^&*()_]+/)[0];
     }
-
     if (num && !sym) {
       filteredChars = chars.match(/[^!@#$%^&*()_]+/)[0];
     }
     if (!num && sym) {
       filteredChars = chars.match(/[^\d]+/)[0];
-    }
-
-    if (num && sym) {
-      filteredChars = chars;
     }
 
     for (let i = 0; i < passwordLength; i++) {
@@ -108,20 +103,24 @@ function App() {
             onChange={passwordLengthChangeHandler}
             value={passwordLength}
           />
-          <label htmlFor="checkbox-numbers">Numbers</label>
-          <input
-            type="checkbox"
-            name="checkbox-numbers"
-            onChange={numbersIsCheckedHandler}
-            checked={numbersIsChecked}
-          />
-          <label htmlFor="checkbox-symbols">Symbols</label>
-          <input
-            type="checkbox"
-            name="checkbox-symbols"
-            onChange={symbolsIsCheckedHandler}
-            checked={symbolsIsChecked}
-          />
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              name="checkbox-numbers"
+              onChange={numbersIsCheckedHandler}
+              checked={numbersIsChecked}
+            />
+            <label htmlFor="checkbox-numbers">Numbers</label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              name="checkbox-symbols"
+              onChange={symbolsIsCheckedHandler}
+              checked={symbolsIsChecked}
+            />
+            <label htmlFor="checkbox-symbols">Symbols</label>
+          </div>
         </div>
         <div className="regeneratePasswordIcon">
           <FontAwesomeIcon icon={faSyncAlt} onClick={reloadHandler} />

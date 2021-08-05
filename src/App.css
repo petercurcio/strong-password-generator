@@ -115,7 +115,7 @@ body {
   color: #333;
   background: #fff;
   border-radius: 5px;
-  padding: 0.5em 0;
+  padding: 0.5em;
   margin: 1em 0;
   font-size: 1.6rem;
   font-family: monospace;
@@ -161,6 +161,18 @@ input[type="range"] {
 .check-icon {
   display: none;
   padding: 0 3.22em;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  transform: scale(1.75);
+  margin-right: 1em;
+}
+.checkbox + .checkbox {
+  margin-left: 1em;
+}
+.checkbox {
+  display: inline-block;
 }
 
 /* Main Styles */
