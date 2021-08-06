@@ -78,13 +78,16 @@ select {
 :root {
   --blue-bg-color: #0572ec;
   --blue-hover-color: #0458b9;
+  --bg-color: #0a2d4d;
+  --cb-size: 25px;
+  --cb-rotation-deg: 40deg;
 }
 
 body {
+  background-color: var(--bg-color);
   color: #fff;
   margin: 0;
   font-size: 1rem;
-  background-color: #0a2d4d;
 }
 
 .main-title {
@@ -164,136 +167,50 @@ input[type="range"] {
   display: block;
 }
 
-.check-icon {
-  display: none;
-  padding: 0 3.22em;
+.checkbox-wrapper {
+  display: flex;
 }
-
-input[type="checkbox"] {
-  cursor: pointer;
-  transform: scale(1.75);
-  margin-right: 1em;
-}
-.checkbox + .checkbox {
+.checkbox-container + .checkbox-container {
   margin-left: 1em;
 }
-.checkbox {
-  display: inline-block;
-}
-
-:root {
-  --blue-bg-color: #0572ec;
-  --blue-hover-color: #0458b9;
-  --bg-color: #0a2d4d;
-  --cb-size: 25px;
-  --cb-rotation-deg: 40deg;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: #fff;
-}
-
-/* Checkbox styles 1 */
-/* .checkbox-wrapper {
-  display: block;
-  position: relative;
-  padding-left: 45px;
-  margin-bottom: 15px;
+.checkbox-container label {
   cursor: pointer;
-  font-size: 20px;
+  display: flex;
 }
-input[type="checkbox"] {
-  position: absolute;
+.checkbox-container input[type="checkbox"] {
+  cursor: pointer;
   opacity: 0;
-  z-index: -9999;
-}
-.custom-checkbox {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: var(--cb-size);
-  width: var(--cb-size);
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
-.checkbox-wrapper:hover input ~ .custom-checkbox {
-  background-color: var(--blue-hover-color);
-}
-.checkbox-wrapper input:active ~ .custom-checkbox {
-  background-color: white;
-}
-.checkbox-wrapper input:checked ~ .custom-checkbox {
-  background-color: var(--blue-bg-color);
-  border: 1px solid var(--blue-bg-color);
-}
-.custom-checkbox:after {
+
+.checkbox-container label::before {
   content: "";
-  position: absolute;
-  display: none;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: 0.05em white;
+  background-color: white;
 }
-.checkbox-wrapper input:checked ~ .custom-checkbox:after {
-  display: block;
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type="checkbox"]:hover + label::before {
+  border: 0.05em var(--blue-bg-color);
 }
-.checkbox-wrapper .custom-checkbox:after {
-  left: 8px;
-  bottom: 5px;
-  width: 6px;
-  height: 14px;
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  -webkit-transform: rotate(var(--cb-rotation-deg));
-  -ms-transform: rotate(var(--cb-rotation-deg));
-  transform: rotate(var(--cb-rotation-deg));
+
+/* .checkbox-container input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 20px black;
 } */
-/* End Checkbox Styles #1 */
 
-/* Checkbox Styles #2 */
-input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -9999;
+.checkbox-container input[type="checkbox"]:checked + label::before {
+  content: "\002714";
+  background-color: var(--blue-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
-input[type="checkbox"] + label {
-  position: relative;
-  padding-left: 24px;
-}
-input[type="checkbox"] + label .indicator {
-  position: absolute;
-  left: -4px;
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: #fff;
-  border-radius: 3px;
-  border: 1px solid var(--blue-bg-color);
-  cursor: pointer;
-  transition: box-shadow 200ms, border 200ms, background 200ms;
-}
-input[type="checkbox"] + label .indicator:hover {
-  background: #fff;
-}
-input[type="checkbox"]:focus + label .indicator {
-  box-shadow: 0px 0px 1px 3px var(--blue-bg-color);
-}
-input[type="checkbox"]:checked + label .indicator {
-  background: var(--blue-bg-color);
-}
-input[type="checkbox"]:checked + label .indicator::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 16px;
-  border: 4px solid #fff;
-  border-left: none;
-  border-top: none;
-  transform: rotate(45deg);
-  left: 6px;
-}
-/* End Checkbox Styles #2 */
 
-/* Main Styles */
 .button {
   display: block;
   background-color: var(--blue-bg-color);

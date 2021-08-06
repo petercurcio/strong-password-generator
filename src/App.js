@@ -103,69 +103,25 @@ function App() {
             onChange={passwordLengthChangeHandler}
             value={passwordLength}
           />
-          {/* <div className="checkbox">
-            <input
-              type="checkbox"
-              name="checkbox-numbers"
-              onChange={numbersIsCheckedHandler}
-              checked={numbersIsChecked}
-            />
-            <label htmlFor="checkbox-numbers">Numbers</label>
-          </div>
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              name="checkbox-symbols"
-              onChange={symbolsIsCheckedHandler}
-              checked={symbolsIsChecked}
-            />
-            <label htmlFor="checkbox-symbols">Symbols</label>
-          </div> */}
-          {/* <div className="checkbox">
-            <label className="checkbox-wrapper">
-              Numbers
+          <div className="checkbox-wrapper">
+            <div className="checkbox-container">
               <input
                 type="checkbox"
+                id="cb1"
                 checked={numbersIsChecked}
                 onChange={numbersIsCheckedHandler}
               />
-              <span className="custom-checkbox"></span>
-            </label>
-          </div>
-          <div className="checkbox">
-            <label className="checkbox-wrapper">
-              Check
+              <label htmlFor="cb1">Numbers</label>
+            </div>
+            <div className="checkbox-container">
               <input
                 type="checkbox"
+                id="cb2"
                 checked={symbolsIsChecked}
                 onChange={symbolsIsCheckedHandler}
               />
-              <span className="custom-checkbox"></span>
-            </label>
-          </div> */}
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              id="checkbox-element-1"
-              checked={numbersIsChecked}
-              onChange={numbersIsCheckedHandler}
-            />
-            <label htmlFor="checkbox-element-1">
-              <span className="indicator"></span>
-              <span className="label-text">Numbers</span>
-            </label>
-          </div>
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              id="checkbox-element-2"
-              checked={symbolsIsChecked}
-              onChange={symbolsIsCheckedHandler}
-            />
-            <label htmlFor="checkbox-element-2">
-              <span className="indicator"></span>
-              <span className="label-text">Symbols</span>
-            </label>
+              <label htmlFor="cb2">Symbols</label>
+            </div>
           </div>
         </div>
         <div className="regeneratePasswordIcon">
