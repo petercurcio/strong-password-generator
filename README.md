@@ -1,6 +1,6 @@
 # Strong Password Generator
 
-[Live Demo](https://github.com/petercurcio/random-password-generator)
+[Live Demo](https://cranky-goldwasser-bc93db.netlify.app/)
 
 ## Summary
 
