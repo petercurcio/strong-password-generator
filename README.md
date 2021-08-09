@@ -1,5 +1,7 @@
 # Strong Password Generator
 
+![screenshot](/public/screenshot.png)
+
 [Live Demo](https://cranky-goldwasser-bc93db.netlify.app/)
 
 ## Summary
