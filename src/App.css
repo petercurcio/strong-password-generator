@@ -116,6 +116,10 @@ body {
   justify-content: space-between;
 }
 
+.row > div {
+  margin-bottom: 1em;
+}
+
 .password-display {
   width: 100%;
   margin: 0 auto;
@@ -169,6 +173,7 @@ input[type="range"] {
 
 .checkbox-wrapper {
   display: flex;
+  justify-content: center;
 }
 .checkbox-container + .checkbox-container {
   margin-left: 1em;
@@ -207,6 +212,7 @@ input[type="range"] {
   background-color: var(--blue-bg-color);
   display: flex;
   justify-content: center;
+  /* justify-content: flex-start; */
   align-items: center;
   color: white;
 }
@@ -288,7 +294,7 @@ input[type="range"] {
 
 .regeneratePasswordIcon {
   transition: transform 0.5s ease-in-out;
-  margin-left: 1em;
+  margin: 0;
   font-size: 1.5em;
 }
 .regeneratePasswordIcon:hover {
@@ -310,5 +316,11 @@ input[type="range"] {
 @media (min-width: 670px) {
   .row {
     flex-direction: row;
+  }
+  .regeneratePasswordIcon {
+    margin-left: 1em;
+  }
+  .checkbox-wrapper {
+    justify-content: flex-start;
   }
 }
