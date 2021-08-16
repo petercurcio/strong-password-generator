@@ -1,6 +1,6 @@
 # Strong Password Generator
 
-<a href="https://cranky-goldwasser-bc93db.netlify.app/" target="_blank" alt="live demo">Live Demo</a>
+[Live Demo](https://cranky-goldwasser-bc93db.netlify.app/)
 
 ![screenshot](/public/screenshot.png)
 
