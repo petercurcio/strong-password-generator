@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Container from "./components/Container";
 import Button from "./components/Button";
 // import Checkbox from "./components/Checkbox";
-// import RandomWords from "./components/RandomWords";
+import RandomWords from "./components/RandomWords";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import parser from "html-react-parser";
@@ -130,7 +130,7 @@ function App() {
         </div>
         <Button onClick={copyPasswordButtonHandler} title="Copy To Clipboard" />
       </div>
-      {/* <RandomWords /> */}
+      <RandomWords />
     </Container>
   );
 }
