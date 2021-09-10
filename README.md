@@ -10,7 +10,7 @@ This is based on [1Password's Strong Password Generator](https://1password.com/p
 ## Features
 
 - Built with React
-- Utilized `useState` hook to manage values of the password itself, password length, as well as if numbers or symbols checkboxes are checked.
+- Utilizes `useState` hook to manage values of generated password, password length, as well as boolean values of numbers and symbols checkboxes.
 - I used CSS animations for the "Copy To Clipboard" and circular arrow refresh buttons.
 
 ## Upcoming
