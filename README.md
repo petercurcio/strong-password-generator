@@ -1,6 +1,7 @@
 # Strong Password Generator
 
-[Live Demo](https://github.com/petercurcio/strong-password-generator)
+[Live Demo](https://cranky-goldwasser-bc93db.netlify.app/)
+
 [![](/public/screenshot.png)](https://cranky-goldwasser-bc93db.netlify.app/)
 
 ## Background
