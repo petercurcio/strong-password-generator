@@ -100,7 +100,8 @@ body {
   width: 85%;
   max-width: 640px;
   height: 50vh;
-  margin: 10vh auto;
+  /* margin: 10vh auto; */
+  margin: 20vh auto;
 
   display: flex;
   flex-direction: column;
@@ -322,5 +323,9 @@ input[type="range"] {
   }
   .checkbox-wrapper {
     justify-content: flex-start;
+  }
+
+  .container {
+    margin: 10vh auto;
   }
 }
