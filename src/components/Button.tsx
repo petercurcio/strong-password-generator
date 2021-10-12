@@ -2,16 +2,28 @@ import React from "react";
 import "./Button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FunctionExpression } from "typescript";
 
-const NewButton = (props) => {
-  const clickHandler = () => {
-    props.onClick();
-    document.querySelector(".title-text").classList.toggle("bumpText");
-    document.querySelector(".btn-5b-before").classList.toggle("btn-5b-active");
+type Props = {
+  title: string;
+  onClick(): FunctionExpression;
+};
+
+const Button = ({ onClick, title }: Props) => {
+  const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    onClick();
+    document!
+      .querySelector<HTMLInputElement>(".title-text")!
+      .classList.toggle("bumpText");
+    document!
+      .querySelector<HTMLInputElement>(".btn-5b-before")!
+      .classList.toggle("btn-5b-active");
     setTimeout(() => {
-      document.querySelector(".title-text").classList.toggle("bumpText");
-      document
-        .querySelector(".btn-5b-before")
+      document!
+        .querySelector<HTMLInputElement>(".title-text")!
+        .classList.toggle("bumpText");
+      document!
+        .querySelector<HTMLInputElement>(".btn-5b-before")!
         .classList.toggle("btn-5b-active");
     }, 1000);
   };
@@ -32,10 +44,9 @@ const NewButton = (props) => {
       >
         <FontAwesomeIcon className="fa-icon-check" icon={faCheck} />
       </div>
-
-      <span className="title-text">{props.title}</span>
+      <span className="title-text">{title}</span>
     </button>
   );
 };
 
-export default NewButton;
+export default Button;
