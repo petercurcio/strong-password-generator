@@ -20,9 +20,9 @@ function App() {
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_";
 
   const generatePassword = (
-    passwordLength,
-    num = numbersIsChecked,
-    sym = symbolsIsChecked
+    passwordLength: number,
+    num: boolean = numbersIsChecked,
+    sym: boolean = symbolsIsChecked
   ) => {
     let filteredChars = chars;
     let plainPasswd = "";
