@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent, ChangeEvent } from "react";
 import Container from "./components/Container";
 import Button from "./components/Button";
 // import Checkbox from "./components/Checkbox";
@@ -11,8 +11,8 @@ import "./App.css";
 
 function App() {
   const [passwordLength, setPasswordLength] = useState(18);
-  const [password, setPassword] = useState(null);
-  const [plainPasswd, setPlainPasswd] = useState(null);
+  const [password, setPassword] = useState("");
+  const [plainPasswd, setPlainPasswd] = useState("");
   const [numbersIsChecked, setNumbersIsChecked] = useState(true);
   const [symbolsIsChecked, setSymbolsIsChecked] = useState(true);
 
@@ -57,12 +57,14 @@ function App() {
     setPassword(parser(passwd));
   };
 
-  const passwordLengthChangeHandler = (e) => {
+  const passwordLengthChangeHandler = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
     setPasswordLength(e.target.value);
     generatePassword(e.target.value);
   };
 
-  const copyPasswordButtonHandler = () => {
+  const copyPasswordButtonHandler = (event: MouseEvent) => {
     navigator.clipboard.writeText(plainPasswd);
   };
 
