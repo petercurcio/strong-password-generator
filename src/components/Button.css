@@ -14,8 +14,6 @@
   padding: 1.25em 2em;
   display: inline-block;
   margin: 0.5em 2em;
-  /* text-transform: uppercase; */
-  /* letter-spacing: 1px; */
   font-weight: 700;
   outline: none;
   position: relative;
@@ -44,7 +42,6 @@
 
 /* Button 5 */
 .btn-5 {
-  /* background: #823aa0; */
   background: var(--blue-bg-color);
   color: #fff;
   height: auto;
@@ -63,7 +60,6 @@
 }
 
 .btn-5:active {
-  /* background: #9053a9; */
   top: 2px;
 }
 
@@ -78,45 +74,12 @@
   transition: all 0.3s;
   backface-visibility: hidden;
 }
-
-/* .btn-5:before {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  line-height: 2.5;
-  font-size: 180%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-} */
-
-/* .btn-5:active:before {
-  color: #703b87;
-} */
-
-/* Button 5b */
-/* .btn-5b:hover span {
-  -webkit-transform: translateX(200%);
-  -moz-transform: translateX(200%);
-  -ms-transform: translateX(200%);
-  transform: translateX(200%);
-} */
-
 .bumpText {
   -webkit-transform: translateX(200%);
   -moz-transform: translateX(200%);
   -ms-transform: translateX(200%);
   transform: translateX(200%);
 }
-
-/* .btn-5b:before {
-  left: -100%;
-  top: 0;
-} */
-
-/* .btn-5b:hover:before {
-  left: 0;
-} */
 
 .btn-5b-before {
   left: -100%;
@@ -133,7 +96,4 @@
 
 .fa-icon-check {
   position: relative;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 }
